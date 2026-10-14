@@ -1,0 +1,189 @@
+/* Main Navbar */
+.pickmyshow-navbar {
+    background-color: #ffffff;
+    padding: 18px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.pickmyshow-navbar .container {
+    gap: 36px;
+}
+
+/* Website Logo */
+.pickmyshow-logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #222222;
+    text-decoration: none;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.pickmyshow-logo span {
+    color: #e63946;
+}
+
+.pickmyshow-logo:hover {
+    color: #222222;
+}
+
+/* Navbar Content */
+.pickmyshow-navbar .navbar-collapse {
+    align-items: center;
+    gap: 32px;
+}
+
+/* Navigation Links */
+.pickmyshow-nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.pickmyshow-navbar .nav-link {
+    color: #444444;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.2s ease;
+}
+
+.pickmyshow-navbar .nav-link:hover,
+.pickmyshow-navbar .nav-link.active {
+    color: #e63946;
+}
+
+/* City Selector */
+.pickmyshow-city {
+    flex-shrink: 0;
+}
+
+.city-select {
+    width: 135px;
+    padding: 10px 30px 10px 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.city-select:focus {
+    border-color: #e63946;
+    box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.1);
+}
+
+/* Search Bar */
+.pickmyshow-search {
+    flex: 1;
+    min-width: 150px;
+    max-width: 420px;
+    margin: 0;
+}
+
+.pickmyshow-search .form-control {
+    width: 100%;
+    padding: 11px 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 7px;
+    font-size: 14px;
+    box-shadow: none;
+}
+
+.pickmyshow-search .form-control:focus {
+    border-color: #e63946;
+    box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.1);
+}
+
+/* Sign In Button */
+.pickmyshow-signin {
+    flex-shrink: 0;
+    padding: 10px 22px;
+    border: 1px solid #e63946;
+    border-radius: 7px;
+    background-color: #e63946;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.pickmyshow-signin:hover {
+    background-color: #c92e3a;
+    border-color: #c92e3a;
+    color: #ffffff;
+}
+
+.pickmyshow-signin:focus-visible {
+    outline: 3px solid rgba(230, 57, 70, 0.25);
+    outline-offset: 3px;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 991px) {
+    .pickmyshow-navbar {
+        padding: 14px 0;
+    }
+
+    .pickmyshow-navbar .container {
+        gap: 12px;
+    }
+
+    .pickmyshow-navbar .navbar-collapse {
+        padding-top: 20px;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .pickmyshow-nav-links {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .pickmyshow-navbar .nav-link {
+        padding: 10px 0;
+    }
+
+    .pickmyshow-city {
+        width: 100%;
+    }
+
+    .city-select {
+        width: 100%;
+    }
+
+    .pickmyshow-search {
+        width: 100%;
+        max-width: none;
+    }
+
+    .pickmyshow-signin {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Sign In Button - Force PickMyShow Branding */
+.pickmyshow-navbar .pickmyshow-signin,
+.pickmyshow-navbar .pickmyshow-signin:focus {
+    background-color: #e63946;
+    border: 1px solid #e63946;
+    color: #ffffff;
+}
+
+.pickmyshow-navbar .pickmyshow-signin:hover {
+    background-color: #c92e3a;
+    border-color: #c92e3a;
+    color: #ffffff;
+}
+
+.pickmyshow-navbar .pickmyshow-signin:active {
+    background-color: #b92330;
+    border-color: #b92330;
+    color: #ffffff;
+}
