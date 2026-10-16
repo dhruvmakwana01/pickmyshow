@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import '../css/Navbar.css';
+import { Link } from 'react-router';
 
-function Navbar({onLinkclick}) {
+function Navbar({ onLinkclick }) {
     const [searchText, setSearchText] = useState('');
     const [selectedCity, setSelectedCity] = useState('Mumbai');
 
@@ -46,15 +47,32 @@ function Navbar({onLinkclick}) {
                     {/* Navigation Links */}
                     <ul className="navbar-nav pickmyshow-nav-links">
                         <li className="nav-item">
-                            <a className="nav-link active" href="/"  onClick={(e) => {e.preventDefault(); onLinkclick("Movies")}}>
+                            <Link className="nav-link" to="/">
+                               Home
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link active" to="/Movies">
                                 Movies
-                            </a>
+                            </Link>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="/events" onClick={(e) => {e.preventDefault(); onLinkclick("Events")}}>
+                            <Link className="nav-link" to="/Events">
                                 Events
-                            </a>
+                            </Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/Streams">
+                                Streams
+                            </Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/Theatres">
+                                Theatres
+                            </Link>
                         </li>
                     </ul>
 
@@ -86,7 +104,7 @@ function Navbar({onLinkclick}) {
                         <input
                             className="form-control"
                             type="search"
-                            placeholder="Search movies, events..."
+                            placeholder="Search"
                             aria-label="Search movies and events"
                             value={searchText}
                             onChange={(e) =>
@@ -98,10 +116,11 @@ function Navbar({onLinkclick}) {
                     {/* Sign In Button */}
                     <button
                         className="btn pickmyshow-signin"
-                        type="button"
+                        type="button" onClick={(e) => { e.preventDefault(); onLinkclick("Signin") }}
                     >
                         Sign in
                     </button>
+
                 </div>
             </div>
         </nav>

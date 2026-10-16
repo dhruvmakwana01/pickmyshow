@@ -7,6 +7,7 @@ import Navbar from './components/Navbar.jsx'
 import Main from './components/Main.jsx'
 import Footer from './components/Footer.jsx'
 import Events from './components/Events.jsx'
+import { BrowserRouter } from 'react-router';
 
 function App() {
   
@@ -15,9 +16,11 @@ function App() {
 
   return (
     <>
+    <BrowserRouter>
       <Navbar onLinkclick={setActivepage} />
       <Main currentPage={activepage} />
       <Footer />
+      </BrowserRouter>
     </>
   )
 }
