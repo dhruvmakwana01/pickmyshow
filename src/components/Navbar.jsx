@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import '../css/Navbar.css';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
-function Navbar({ onLinkclick }) {
+function Navbar() {
     const [searchText, setSearchText] = useState('');
     const [selectedCity, setSelectedCity] = useState('Mumbai');
+
+    const navigate = useNavigate();
 
     const cities = [
         'Mumbai',
@@ -22,9 +24,9 @@ function Navbar({ onLinkclick }) {
             <div className="container">
 
                 {/* Website Logo */}
-                <a className="navbar-brand pickmyshow-logo" href="/">
+                <Link className="navbar-brand pickmyshow-logo" to="/">
                     Pick<span>My</span>Show
-                </a>
+                </Link>
 
                 {/* Mobile Toggle Button */}
                 <button
@@ -48,11 +50,12 @@ function Navbar({ onLinkclick }) {
                     <ul className="navbar-nav pickmyshow-nav-links">
                         <li className="nav-item">
                             <Link className="nav-link" to="/">
-                               Home
+                                Home
                             </Link>
                         </li>
+
                         <li className="nav-item">
-                            <Link className="nav-link active" to="/Movies">
+                            <Link className="nav-link" to="/Movies">
                                 Movies
                             </Link>
                         </li>
@@ -113,14 +116,14 @@ function Navbar({ onLinkclick }) {
                         />
                     </form>
 
-                    {/* Sign In Button */}
+                    {/* Sign Up Button */}
                     <button
-                        className="btn pickmyshow-signin"
-                        type="button" onClick={(e) => { e.preventDefault(); onLinkclick("Signin") }}
+                        className="btn pickmyshow-signup"
+                        type="button"
+                        onClick={() => navigate('/Signup')}
                     >
-                        Sign in
+                        Sign Up
                     </button>
-
                 </div>
             </div>
         </nav>

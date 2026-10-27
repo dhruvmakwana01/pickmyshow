@@ -99,8 +99,8 @@
     box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.1);
 }
 
-/* Sign In Button */
-.pickmyshow-signin {
+/* Sign Up Button */
+.pickmyshow-signup {
     flex-shrink: 0;
     padding: 10px 22px;
     border: 1px solid #e63946;
@@ -113,13 +113,13 @@
     transition: background-color 0.2s ease;
 }
 
-.pickmyshow-signin:hover {
+.pickmyshow-signup:hover {
     background-color: #c92e3a;
     border-color: #c92e3a;
     color: #ffffff;
 }
 
-.pickmyshow-signin:focus-visible {
+.pickmyshow-signup:focus-visible {
     outline: 3px solid rgba(230, 57, 70, 0.25);
     outline-offset: 3px;
 }
@@ -162,27 +162,27 @@
         max-width: none;
     }
 
-    .pickmyshow-signin {
+    .pickmyshow-signup {
         width: 100%;
         margin: 0;
     }
 }
 
-/* Sign In Button - Force PickMyShow Branding */
-.pickmyshow-navbar .pickmyshow-signin,
-.pickmyshow-navbar .pickmyshow-signin:focus {
+/* Sign Up Button - Force PickMyShow Branding */
+.pickmyshow-navbar .pickmyshow-signup,
+.pickmyshow-navbar .pickmyshow-signup:focus {
     background-color: #e63946;
     border: 1px solid #e63946;
     color: #ffffff;
 }
 
-.pickmyshow-navbar .pickmyshow-signin:hover {
+.pickmyshow-navbar .pickmyshow-signup:hover {
     background-color: #c92e3a;
     border-color: #c92e3a;
     color: #ffffff;
 }
 
-.pickmyshow-navbar .pickmyshow-signin:active {
+.pickmyshow-navbar .pickmyshow-signup:active {
     background-color: #b92330;
     border-color: #b92330;
     color: #ffffff;

@@ -1,6 +1,6 @@
 import Movies from './Movies.jsx';
 import Events from './Events.jsx';
-import Signin from './Signin.jsx';
+import Signup from './Signup.jsx';
 import AppRoutes from './AppRoutes.jsx';
 
 function Main({currentPage}) {
@@ -9,7 +9,7 @@ function Main({currentPage}) {
             {/* {currentPage === 'default' && (<h2>Main content under construction</h2>)}
             {currentPage === 'Movies' && (<Movies />)}
             {currentPage === 'Events' && (<Events />)}
-            {currentPage === 'Signin' && (<Signin />)} */}
+            {currentPage === 'Signup' && (<Signup />)} */}
             <AppRoutes />
         </>
     );
