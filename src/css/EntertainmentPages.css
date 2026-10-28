@@ -1,0 +1,1699 @@
+
+/* ==========================================
+   PICKMYSHOW - ENTERTAINMENT PAGES
+   Movies | Events | Streams | Theatres
+========================================== */
+
+.ep-page {
+    --ep-red: #e63946;
+    --ep-red-dark: #c92e3a;
+    --ep-text: #20202a;
+    --ep-muted: #777783;
+    --ep-border: #ececf1;
+
+    min-height: 100vh;
+    padding: 24px clamp(16px, 3.5vw, 54px) 65px;
+    overflow: hidden;
+    background: #fff;
+    color: var(--ep-text);
+    font-family: inherit;
+}
+
+.ep-page *,
+.ep-page *::before,
+.ep-page *::after {
+    box-sizing: border-box;
+}
+
+.ep-page a {
+    text-decoration: none;
+}
+
+.ep-page button,
+.ep-page input,
+.ep-page select {
+    font: inherit;
+}
+
+.ep-page img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ==========================================
+   HERO BANNER
+========================================== */
+
+.ep-main-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 440px;
+    padding: clamp(30px, 5vw, 68px);
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 20px;
+    background: #21151b;
+    color: #fff;
+}
+
+.ep-hero-bg,
+.ep-hero-shade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ep-hero-bg {
+    z-index: -2;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.01);
+    transition: transform 0.7s ease;
+}
+
+.ep-main-hero:hover .ep-hero-bg {
+    transform: scale(1.035);
+}
+
+.ep-hero-shade {
+    z-index: -1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(17, 10, 17, 0.94) 0%,
+            rgba(17, 10, 17, 0.79) 43%,
+            rgba(17, 10, 17, 0.24) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(17, 10, 17, 0.45),
+            transparent 65%
+        );
+}
+
+.ep-hero-content {
+    width: 100%;
+    max-width: 630px;
+}
+
+.ep-eyebrow {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--ep-red);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    line-height: 1.6;
+}
+
+.ep-hero-content > .ep-eyebrow {
+    color: #ff9098;
+}
+
+.ep-hero-content h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(40px, 5vw, 66px);
+    font-weight: 850;
+    letter-spacing: -2.5px;
+    line-height: 1.07;
+}
+
+.ep-hero-content > p {
+    max-width: 470px;
+    margin: 19px 0 25px;
+    color: rgba(255, 255, 255, 0.79);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.ep-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 45px;
+    padding: 12px 17px;
+    border: 1px solid var(--ep-red);
+    border-radius: 9px;
+    background: var(--ep-red);
+    color: #fff !important;
+    font-size: 12px;
+    font-weight: 750;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        background 0.22s ease,
+        border-color 0.22s ease,
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.ep-primary-btn:hover {
+    border-color: var(--ep-red-dark);
+    background: var(--ep-red-dark);
+    box-shadow: 0 7px 18px rgba(230, 57, 70, 0.22);
+    transform: translateY(-2px);
+}
+
+.ep-primary-btn span {
+    font-size: 17px;
+    line-height: 1;
+}
+
+.ep-hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin-top: 31px;
+}
+
+.ep-hero-stats span {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 10px;
+}
+
+.ep-hero-stats strong {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 750;
+}
+
+/* ==========================================
+   SECTION HEADINGS
+========================================== */
+
+.ep-section,
+.ep-carousel-section {
+    padding-top: 51px;
+    scroll-margin-top: 25px;
+}
+
+.ep-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 23px;
+}
+
+.ep-section-heading .ep-eyebrow {
+    margin-bottom: 7px;
+}
+
+.ep-section-heading h2 {
+    margin: 0;
+    color: var(--ep-text);
+    font-size: clamp(24px, 2.8vw, 33px);
+    font-weight: 850;
+    letter-spacing: -1.15px;
+    line-height: 1.22;
+}
+
+.ep-section-heading > div > p {
+    margin: 9px 0 0;
+    color: var(--ep-muted);
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.ep-section-count,
+.ep-carousel-hint {
+    flex-shrink: 0;
+    padding-bottom: 4px;
+    color: #93939e;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.ep-carousel-hint span {
+    margin-left: 5px;
+    color: var(--ep-red);
+    font-size: 15px;
+}
+
+/* ==========================================
+   FILTERS
+========================================== */
+
+.ep-filter-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.ep-filter-pills {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+    padding-bottom: 3px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.ep-filter-pills::-webkit-scrollbar {
+    display: none;
+}
+
+.ep-filter-pill {
+    flex-shrink: 0;
+    min-height: 34px;
+    padding: 8px 14px;
+    border: 1px solid #e7e7ed;
+    border-radius: 30px;
+    background: #fff;
+    color: #666672;
+    font-size: 11px !important;
+    font-weight: 650;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.ep-filter-pill:hover {
+    border-color: #efabb1;
+    color: var(--ep-red);
+}
+
+.ep-filter-pill.active {
+    border-color: var(--ep-red);
+    background: var(--ep-red);
+    color: #fff;
+}
+
+.ep-select {
+    flex-shrink: 0;
+    min-height: 39px;
+    max-width: 180px;
+    padding: 9px 12px;
+    border: 1px solid #e7e7ed;
+    border-radius: 9px;
+    outline: none;
+    background: #fff;
+    color: #42424c;
+    font-size: 11px !important;
+    cursor: pointer;
+}
+
+.ep-select:focus {
+    border-color: var(--ep-red);
+}
+
+/* ==========================================
+   MOVIE LISTINGS
+========================================== */
+
+.ep-movie-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ep-movie-row {
+    display: grid;
+    grid-template-columns: 175px minmax(0, 1fr);
+    gap: 22px;
+    padding: 16px;
+    border: 1px solid var(--ep-border);
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 3px 15px rgba(25, 25, 35, 0.025);
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.ep-movie-row:hover {
+    border-color: #f0d5d9;
+    box-shadow: 0 7px 23px rgba(25, 25, 35, 0.055);
+}
+
+.ep-movie-row > img {
+    width: 175px;
+    height: 100%;
+    min-height: 245px;
+    max-height: 290px;
+    border-radius: 10px;
+    background: #f0edf0;
+    object-fit: cover;
+}
+
+.ep-movie-details {
+    min-width: 0;
+    padding: 2px 0;
+}
+
+.ep-movie-title-line,
+.ep-theatre-title-line {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.ep-movie-title-line h3,
+.ep-theatre-title-line h3 {
+    margin: 0;
+    color: var(--ep-text);
+    font-size: 21px;
+    font-weight: 850;
+    letter-spacing: -0.5px;
+}
+
+.ep-rating {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 9px;
+    border: 1px solid #f2e4bd;
+    border-radius: 7px;
+    background: #fffaf0;
+    color: #8c6411;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.ep-muted {
+    margin: 8px 0 0;
+    color: var(--ep-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.ep-muted > span {
+    margin: 0 5px;
+}
+
+.ep-movie-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 12px;
+}
+
+.ep-movie-meta span {
+    padding: 5px 8px;
+    border: 1px solid #eeeeF2;
+    border-radius: 5px;
+    background: #fafafd;
+    color: #666672;
+    font-size: 9px;
+    font-weight: 650;
+}
+
+.ep-review-snippet {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fafafd;
+}
+
+.ep-review-icon {
+    color: var(--ep-red);
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.ep-review-snippet p {
+    margin: 0;
+    color: #41414c;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.ep-review-snippet > div > span {
+    display: block;
+    margin-top: 4px;
+    color: #9999a3;
+    font-size: 9px;
+}
+
+.ep-showtime-area,
+.ep-theatre-showtimes {
+    margin-top: 16px;
+}
+
+.ep-showtime-label {
+    display: block;
+    margin-bottom: 9px;
+    color: #93939e;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.ep-showtimes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ep-showtime {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 8px 12px;
+    border: 1px solid #f0b8bf;
+    border-radius: 7px;
+    background: #fffafb;
+    color: #c92e3a;
+    font-size: 10px;
+    font-weight: 750;
+    white-space: nowrap;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.ep-showtime:hover {
+    border-color: var(--ep-red);
+    background: var(--ep-red);
+    color: #fff;
+}
+
+/* ==========================================
+   AUTOMATIC HORIZONTAL CAROUSELS
+========================================== */
+
+.ep-marquee {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 14px;
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent,
+        #000 1.5%,
+        #000 98.5%,
+        transparent
+    );
+    mask-image: linear-gradient(
+        90deg,
+        transparent,
+        #000 1.5%,
+        #000 98.5%,
+        transparent
+    );
+}
+
+.ep-marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 18px;
+    animation: ep-carousel-scroll 48s linear infinite;
+    will-change: transform;
+}
+
+.ep-marquee:hover .ep-marquee-track {
+    animation-play-state: paused;
+}
+
+.ep-marquee-track > * {
+    flex: 0 0 auto;
+}
+
+@keyframes ep-carousel-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Upcoming movies and streams */
+
+.ep-upcoming-card {
+    position: relative;
+    width: clamp(280px, 35vw, 430px);
+    height: 285px;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 14px;
+    background: #21151b;
+    color: #fff;
+}
+
+.ep-upcoming-card > img {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ep-upcoming-card:hover > img {
+    transform: scale(1.06);
+}
+
+.ep-upcoming-shade {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(14, 10, 16, 0.94) 0%,
+        rgba(14, 10, 16, 0.48) 52%,
+        rgba(14, 10, 16, 0.08) 100%
+    );
+}
+
+.ep-upcoming-content {
+    position: absolute;
+    right: 19px;
+    bottom: 19px;
+    left: 19px;
+}
+
+.ep-upcoming-tag {
+    display: inline-block;
+    margin-bottom: 9px;
+    padding: 6px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.11);
+    color: #fff;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    backdrop-filter: blur(8px);
+}
+
+.ep-upcoming-content h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 850;
+    letter-spacing: -0.5px;
+}
+
+.ep-upcoming-content p {
+    margin: 7px 0 11px;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 11px;
+}
+
+.ep-upcoming-content > a {
+    display: inline-block;
+    color: #ff9ca4;
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.ep-coming-soon-label {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.73);
+    font-size: 10px;
+}
+
+/* ==========================================
+   EVENTS
+========================================== */
+
+.ep-event-feature-track {
+    animation-duration: 55s;
+}
+
+.ep-event-feature-card {
+    position: relative;
+    width: clamp(270px, 31vw, 370px);
+    height: 265px;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 14px;
+    background: #21151b;
+    color: #fff;
+}
+
+.ep-event-feature-card > img {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ep-event-feature-card:hover > img {
+    transform: scale(1.06);
+}
+
+.ep-event-feature-shade {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(15, 10, 16, 0.93),
+        rgba(15, 10, 16, 0.04) 90%
+    );
+}
+
+.ep-event-feature-content {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+}
+
+.ep-event-feature-content > span {
+    color: #ff9ca4;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.ep-event-feature-content h3 {
+    margin: 8px 0;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 850;
+}
+
+.ep-event-feature-content p {
+    margin: 0 0 12px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 10px;
+}
+
+.ep-event-feature-content a {
+    color: #ff9ca4;
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.ep-event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.ep-event-card,
+.ep-stream-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--ep-border);
+    border-radius: 14px;
+    background: #fff;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.ep-event-card:hover,
+.ep-stream-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(25, 25, 35, 0.08);
+}
+
+.ep-event-image,
+.ep-stream-image {
+    position: relative;
+    height: 210px;
+    overflow: hidden;
+    background: #f1eff2;
+}
+
+.ep-event-image > img,
+.ep-stream-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ep-event-card:hover .ep-event-image > img,
+.ep-stream-card:hover .ep-stream-image > img {
+    transform: scale(1.05);
+}
+
+.ep-category-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 7px 9px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background: rgba(25, 20, 27, 0.7);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    backdrop-filter: blur(7px);
+}
+
+.ep-event-image > .ep-rating,
+.ep-stream-image > .ep-rating {
+    position: absolute;
+    right: 11px;
+    bottom: 11px;
+}
+
+.ep-event-body,
+.ep-stream-body {
+    padding: 17px;
+}
+
+.ep-event-date {
+    color: var(--ep-red);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.ep-event-body h3,
+.ep-stream-body h3 {
+    margin: 8px 0 0;
+    color: var(--ep-text);
+    font-size: 18px;
+    font-weight: 850;
+    letter-spacing: -0.4px;
+}
+
+.ep-event-body > .ep-muted {
+    margin-top: 6px;
+}
+
+.ep-event-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 17px;
+    padding-top: 13px;
+    border-top: 1px solid #eeeeF2;
+}
+
+.ep-event-footer > strong {
+    color: #33333e;
+    font-size: 12px;
+}
+
+.ep-outline-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 8px 12px;
+    border: 1px solid #f0b8bf;
+    border-radius: 7px;
+    background: #fffafb;
+    color: #c92e3a;
+    font-size: 10px;
+    font-weight: 750;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ep-outline-btn:hover {
+    background: var(--ep-red);
+    color: #fff;
+}
+
+/* ==========================================
+   STREAMS
+========================================== */
+
+.ep-stream-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.ep-stream-image {
+    height: 220px;
+}
+
+.ep-play-symbol {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    padding-left: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    background: rgba(24, 18, 25, 0.58);
+    color: #fff;
+    font-size: 12px;
+    backdrop-filter: blur(8px);
+}
+
+.ep-stream-body > .ep-eyebrow {
+    margin-bottom: 4px;
+    font-size: 9px;
+}
+
+.ep-stream-body > p {
+    min-height: 35px;
+    margin: 8px 0 14px;
+    color: var(--ep-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.ep-stream-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid #eeeeF2;
+}
+
+.ep-stream-footer > span {
+    color: #92929d;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.ep-text-btn {
+    flex-shrink: 0;
+    padding: 5px 0 5px 5px;
+    border: none;
+    background: transparent;
+    color: var(--ep-red);
+    font-size: 10px !important;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+/* ==========================================
+   THEATRES
+========================================== */
+
+.ep-theatre-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 23px;
+    padding: 14px;
+    border: 1px solid var(--ep-border);
+    border-radius: 12px;
+    background: #fcfcfe;
+}
+
+.ep-search-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.ep-search-input-wrap > span {
+    color: var(--ep-red);
+    font-size: 25px;
+    line-height: 1;
+}
+
+.ep-search-input-wrap input {
+    width: 100%;
+    min-width: 0;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--ep-text);
+    font-size: 12px !important;
+}
+
+.ep-search-input-wrap input::placeholder {
+    color: #a0a0aa;
+}
+
+.ep-theatre-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ep-theatre-row {
+    display: grid;
+    grid-template-columns: 205px minmax(0, 1fr);
+    gap: 23px;
+    padding: 16px;
+    border: 1px solid var(--ep-border);
+    border-radius: 15px;
+    background: #fff;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.ep-theatre-row:hover {
+    border-color: #f0d5d9;
+    box-shadow: 0 8px 24px rgba(25, 25, 35, 0.05);
+}
+
+.ep-theatre-row > img {
+    width: 205px;
+    height: 100%;
+    min-height: 210px;
+    max-height: 265px;
+    border-radius: 10px;
+    background: #f0edf0;
+    object-fit: cover;
+}
+
+.ep-theatre-details {
+    min-width: 0;
+    padding: 3px 0;
+}
+
+.ep-theatre-title-line h3 {
+    font-size: 20px;
+}
+
+.ep-location-dot {
+    margin-right: 6px;
+    color: var(--ep-red);
+    font-size: 8px;
+}
+
+.ep-theatre-review {
+    margin-top: 13px;
+}
+
+.ep-theatre-review > strong {
+    color: #44444e;
+    font-size: 10px;
+}
+
+.ep-theatre-review > p {
+    margin: 6px 0 0;
+    color: var(--ep-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.ep-theatre-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.ep-theatre-amenities span {
+    padding: 6px 8px;
+    border: 1px solid #eeeeF2;
+    border-radius: 5px;
+    background: #fafafd;
+    color: #666672;
+    font-size: 9px;
+}
+
+.ep-theatre-showtimes {
+    padding-top: 14px;
+    border-top: 1px solid #eeeeF2;
+}
+
+/* ==========================================
+   THEATRE EXPERIENCE CARDS
+========================================== */
+
+.ep-theatre-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.ep-experience-card {
+    overflow: hidden;
+    border: 1px solid var(--ep-border);
+    border-radius: 13px;
+    background: #fff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ep-experience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(25, 25, 35, 0.07);
+}
+
+.ep-experience-card > img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+}
+
+.ep-experience-card > div {
+    padding: 15px;
+}
+
+.ep-experience-card > div > span {
+    color: var(--ep-red);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.ep-experience-card h3 {
+    margin: 7px 0;
+    color: var(--ep-text);
+    font-size: 17px;
+    font-weight: 850;
+}
+
+.ep-experience-card p {
+    margin: 0;
+    color: var(--ep-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   BOTTOM PROMO
+========================================== */
+
+.ep-wide-promo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 53px;
+    padding: 30px clamp(20px, 4vw, 38px);
+    border: 1px solid #f0e1e4;
+    border-radius: 15px;
+    background:
+        radial-gradient(
+            ellipse at 94% 5%,
+            rgba(230, 57, 70, 0.08),
+            transparent 45%
+        ),
+        #fffafb;
+}
+
+.ep-wide-promo .ep-eyebrow {
+    margin-bottom: 8px;
+}
+
+.ep-wide-promo h2 {
+    margin: 0;
+    color: var(--ep-text);
+    font-size: clamp(21px, 2.7vw, 30px);
+    font-weight: 850;
+    letter-spacing: -0.9px;
+    line-height: 1.3;
+}
+
+.ep-wide-promo p {
+    margin: 8px 0 0;
+    color: var(--ep-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.ep-stream-promo {
+    margin-top: 45px;
+}
+
+/* ==========================================
+   CROSS-PAGE SHORTCUTS
+========================================== */
+
+.ep-shortcut-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.ep-shortcut-card {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 12px;
+    background: #21151b;
+}
+
+.ep-shortcut-card > img {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.ep-shortcut-card:hover > img {
+    transform: scale(1.06);
+}
+
+.ep-shortcut-card::after {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    background: linear-gradient(
+        0deg,
+        rgba(15, 10, 16, 0.88),
+        rgba(15, 10, 16, 0.04)
+    );
+}
+
+.ep-shortcut-card > div {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+}
+
+.ep-shortcut-card > div > span {
+    color: #ff9ca4;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.ep-shortcut-card h3 {
+    margin: 7px 0 0;
+    color: #fff;
+    font-size: 19px;
+    font-weight: 850;
+}
+
+/* ==========================================
+   EMPTY SEARCH RESULTS
+========================================== */
+
+.ep-empty-state {
+    padding: 45px 20px;
+    border: 1px dashed #e5e5eb;
+    border-radius: 13px;
+    background: #fcfcfe;
+    text-align: center;
+}
+
+.ep-empty-state h3 {
+    margin: 0;
+    color: var(--ep-text);
+    font-size: 18px;
+}
+
+.ep-empty-state p {
+    margin: 9px 0 18px;
+    color: var(--ep-muted);
+    font-size: 12px;
+}
+
+.ep-empty-state button {
+    padding: 10px 15px;
+    border: 1px solid var(--ep-red);
+    border-radius: 8px;
+    background: var(--ep-red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+/* ==========================================
+   RESPONSIVE: TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+    .ep-movie-row {
+        grid-template-columns: 145px minmax(0, 1fr);
+        gap: 17px;
+    }
+
+    .ep-movie-row > img {
+        width: 145px;
+    }
+
+    .ep-theatre-row {
+        grid-template-columns: 170px minmax(0, 1fr);
+        gap: 17px;
+    }
+
+    .ep-theatre-row > img {
+        width: 170px;
+    }
+
+    .ep-event-grid,
+    .ep-stream-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ep-event-image,
+    .ep-stream-image {
+        height: 200px;
+    }
+
+    .ep-main-hero {
+        min-height: 400px;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE: MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+    .ep-page {
+        padding: 14px 13px 40px;
+    }
+
+    .ep-main-hero {
+        min-height: 400px;
+        padding: 25px 21px 32px;
+        border-radius: 14px;
+    }
+
+    .ep-hero-shade {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(17, 10, 17, 0.88),
+                rgba(17, 10, 17, 0.47)
+            ),
+            linear-gradient(
+                0deg,
+                rgba(17, 10, 17, 0.48),
+                transparent 75%
+            );
+    }
+
+    .ep-hero-content h1 {
+        font-size: clamp(36px, 8.8vw, 48px);
+        letter-spacing: -1.7px;
+    }
+
+    .ep-hero-content > p {
+        max-width: 390px;
+        margin: 15px 0 20px;
+        font-size: 12px;
+        line-height: 1.85;
+    }
+
+    .ep-hero-stats {
+        gap: 9px 15px;
+        margin-top: 24px;
+    }
+
+    .ep-hero-stats span {
+        font-size: 9px;
+    }
+
+    .ep-section,
+    .ep-carousel-section {
+        padding-top: 36px;
+    }
+
+    .ep-section-heading {
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .ep-section-heading h2 {
+        font-size: 25px;
+        letter-spacing: -0.8px;
+    }
+
+    .ep-section-heading > div > p {
+        font-size: 11px;
+    }
+
+    .ep-section-count,
+    .ep-carousel-hint {
+        font-size: 8px;
+        letter-spacing: 0.7px;
+    }
+
+    .ep-filter-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ep-filter-pills {
+        width: 100%;
+    }
+
+    .ep-select {
+        max-width: 100%;
+        min-height: 36px;
+    }
+
+    .ep-movie-row {
+        grid-template-columns: 105px minmax(0, 1fr);
+        gap: 12px;
+        padding: 10px;
+        border-radius: 11px;
+    }
+
+    .ep-movie-row > img {
+        width: 105px;
+        min-height: 0;
+        height: 175px;
+        border-radius: 8px;
+    }
+
+    .ep-movie-title-line {
+        gap: 7px;
+    }
+
+    .ep-movie-title-line h3 {
+        font-size: 16px;
+        line-height: 1.35;
+    }
+
+    .ep-movie-title-line .ep-rating {
+        padding: 5px 6px;
+        font-size: 9px;
+    }
+
+    .ep-movie-details > .ep-muted {
+        margin-top: 5px;
+        font-size: 10px;
+    }
+
+    .ep-movie-meta {
+        gap: 4px;
+        margin-top: 8px;
+    }
+
+    .ep-movie-meta span {
+        padding: 4px 5px;
+        font-size: 8px;
+    }
+
+    .ep-review-snippet {
+        gap: 7px;
+        margin-top: 10px;
+        padding: 8px;
+    }
+
+    .ep-review-icon {
+        font-size: 21px;
+    }
+
+    .ep-review-snippet p {
+        font-size: 10px;
+    }
+
+    .ep-review-snippet > div > span {
+        font-size: 8px;
+    }
+
+    .ep-showtime-area,
+    .ep-theatre-showtimes {
+        margin-top: 11px;
+    }
+
+    .ep-showtime-label {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .ep-showtimes {
+        gap: 6px;
+    }
+
+    .ep-showtime {
+        min-height: 30px;
+        padding: 7px 8px;
+        font-size: 9px;
+    }
+
+    .ep-marquee-track {
+        gap: 12px;
+    }
+
+    .ep-upcoming-card {
+        width: 275px;
+        height: 230px;
+        border-radius: 11px;
+    }
+
+    .ep-upcoming-content {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+    }
+
+    .ep-upcoming-content h3 {
+        font-size: 20px;
+    }
+
+    .ep-event-feature-card {
+        width: 265px;
+        height: 220px;
+        border-radius: 11px;
+    }
+
+    .ep-event-feature-content {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+    }
+
+    .ep-event-feature-content h3 {
+        font-size: 19px;
+    }
+
+    .ep-event-grid,
+    .ep-stream-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .ep-event-image,
+    .ep-stream-image {
+        height: 205px;
+    }
+
+    .ep-event-body,
+    .ep-stream-body {
+        padding: 14px;
+    }
+
+    .ep-event-body h3,
+    .ep-stream-body h3 {
+        font-size: 17px;
+    }
+
+    .ep-theatre-search {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 8px;
+        padding: 11px;
+    }
+
+    .ep-search-input-wrap {
+        min-height: 35px;
+    }
+
+    .ep-theatre-row {
+        grid-template-columns: 95px minmax(0, 1fr);
+        gap: 12px;
+        padding: 10px;
+        border-radius: 11px;
+    }
+
+    .ep-theatre-row > img {
+        width: 95px;
+        min-height: 0;
+        height: 150px;
+        border-radius: 8px;
+    }
+
+    .ep-theatre-title-line {
+        gap: 7px;
+    }
+
+    .ep-theatre-title-line h3 {
+        font-size: 15px;
+        line-height: 1.35;
+    }
+
+    .ep-theatre-title-line .ep-rating {
+        padding: 5px 6px;
+        font-size: 9px;
+    }
+
+    .ep-theatre-details .ep-muted {
+        font-size: 10px;
+    }
+
+    .ep-theatre-review {
+        margin-top: 10px;
+    }
+
+    .ep-theatre-review > strong {
+        font-size: 9px;
+    }
+
+    .ep-theatre-review > p {
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    .ep-theatre-amenities {
+        gap: 4px;
+        margin-top: 9px;
+    }
+
+    .ep-theatre-amenities span {
+        padding: 5px;
+        font-size: 8px;
+    }
+
+    .ep-theatre-showtimes {
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    .ep-theatre-experience-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .ep-experience-card {
+        display: grid;
+        grid-template-columns: 120px minmax(0, 1fr);
+    }
+
+    .ep-experience-card > img {
+        width: 120px;
+        height: 100%;
+        min-height: 140px;
+    }
+
+    .ep-experience-card > div {
+        padding: 13px;
+    }
+
+    .ep-experience-card h3 {
+        font-size: 15px;
+    }
+
+    .ep-experience-card p {
+        font-size: 10px;
+    }
+
+    .ep-wide-promo {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 17px;
+        margin-top: 35px;
+        padding: 22px 17px;
+        border-radius: 12px;
+    }
+
+    .ep-wide-promo h2 {
+        font-size: 23px;
+        letter-spacing: -0.6px;
+    }
+
+    .ep-wide-promo p {
+        font-size: 11px;
+    }
+
+    .ep-shortcut-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .ep-shortcut-card {
+        height: 160px;
+    }
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width: 370px) {
+    .ep-page {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .ep-main-hero {
+        padding-right: 17px;
+        padding-left: 17px;
+    }
+
+    .ep-hero-content h1 {
+        font-size: 35px;
+    }
+
+    .ep-movie-row {
+        grid-template-columns: 84px minmax(0, 1fr);
+        gap: 9px;
+        padding: 8px;
+    }
+
+    .ep-movie-row > img {
+        width: 84px;
+        height: 140px;
+    }
+
+    .ep-movie-title-line h3 {
+        font-size: 14px;
+    }
+
+    .ep-movie-title-line .ep-rating {
+        padding: 4px;
+        font-size: 8px;
+    }
+
+    .ep-theatre-row {
+        grid-template-columns: 78px minmax(0, 1fr);
+        gap: 9px;
+        padding: 8px;
+    }
+
+    .ep-theatre-row > img {
+        width: 78px;
+        height: 130px;
+    }
+
+    .ep-theatre-title-line h3 {
+        font-size: 13px;
+    }
+
+    .ep-theatre-title-line .ep-rating {
+        padding: 4px;
+        font-size: 8px;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .ep-page *,
+    .ep-page *::before,
+    .ep-page *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

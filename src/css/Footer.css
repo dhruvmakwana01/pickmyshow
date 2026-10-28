@@ -1,0 +1,163 @@
+
+/* ========================================
+   PickMyShow - Footer
+======================================== */
+
+.pickmyshow-footer {
+    width: 100%;
+    margin-top: auto;
+    background-color: #ffffff;
+    border-top: 1px solid #eeeeee;
+    color: #555555;
+    box-sizing: border-box;
+}
+
+/* Main Footer Layout */
+.pickmyshow-footer-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 42px 24px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+}
+
+/* Brand Section */
+.footer-brand {
+    max-width: 280px;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 14px;
+
+    color: #222222;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+.footer-logo span {
+    color: #e63946;
+}
+
+.footer-logo:hover {
+    color: #222222;
+}
+
+.footer-brand p {
+    margin: 0;
+    color: #777777;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Footer Sections */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-section h5 {
+    margin: 0 0 6px;
+    color: #222222;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* Footer Links */
+.footer-section a {
+    color: #777777;
+    font-size: 14px;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-section a:hover {
+    color: #e63946;
+}
+
+/* Bottom Footer */
+.pickmyshow-footer-bottom {
+    width: 100%;
+    padding: 18px 24px;
+    border-top: 1px solid #eeeeee;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.pickmyshow-footer-bottom p {
+    margin: 0;
+    color: #888888;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media (max-width: 991px) {
+    .pickmyshow-footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+        padding: 35px 24px;
+    }
+
+    .footer-brand {
+        max-width: 320px;
+    }
+}
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 480px) {
+    .pickmyshow-footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 20px;
+        padding: 30px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
+
+    .footer-logo {
+        font-size: 24px;
+    }
+
+    .footer-brand p {
+        max-width: 300px;
+        font-size: 13px;
+    }
+
+    .footer-section {
+        gap: 10px;
+    }
+
+    .footer-section h5 {
+        font-size: 14px;
+    }
+
+    .footer-section a {
+        font-size: 13px;
+    }
+
+    .pickmyshow-footer-bottom {
+        padding: 16px 12px;
+    }
+
+    .pickmyshow-footer-bottom p {
+        font-size: 12px;
+    }
+}

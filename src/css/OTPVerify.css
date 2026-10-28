@@ -1,107 +1,154 @@
+/* PickMyShow - Cinematic OTP Verification Page */
 
-/* OTP Verification Page */
-
-body {
-    background: #f5f5f7;
+body:has(#otpemail) {
+    background: #100b14;
 }
 
+/* Main OTP card */
 form:has(#otpemail) {
-    width: 100%;
+    --otp-accent: #e51b50;
+    --otp-accent-dark: #b90042;
+
+    position: relative;
+    width: calc(100% - 32px);
     max-width: 420px;
-    margin: 60px auto;
-    padding: 36px 30px;
-    background: #ffffff;
-    border: 1px solid #e8e8e8;
-    border-radius: 12px;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+    margin: 70px auto;
+    padding: 38px 30px;
     box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.25);
+
     text-align: center;
+    font-family: inherit;
+    animation: otpCardEnter 0.45s ease-out both;
+}
+
+@keyframes otpCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading */
+form:has(#otpemail)::before {
+    content: "VERIFY YOUR EMAIL";
+    display: block;
+    margin-bottom: 10px;
+    color: #e51b50;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 /* Email information */
 form:has(#otpemail) p {
-    margin: 0 0 28px;
-    color: #555555;
-    font-size: 14px;
-    line-height: 1.7;
+    margin: 0 0 25px;
+    color: #777783;
+    font-size: 13px;
+    line-height: 1.8;
 }
 
 #otpemail {
     display: block;
-    margin-top: 5px;
-    color: #222222;
-    font-size: 15px;
-    font-weight: 600;
+    margin-top: 6px;
+    color: #20202a;
+    font-size: 14px;
+    font-weight: 700;
     overflow-wrap: anywhere;
 }
 
-/* Six OTP boxes */
+/* Six OTP input boxes */
 form:has(#otpemail) input[type="text"] {
     display: inline-block !important;
-    width: 46px !important;
-    min-width: 46px !important;
-    max-width: 46px !important;
-    height: 52px !important;
-    margin: 0 4px 28px !important;
+    width: 44px !important;
+    min-width: 44px !important;
+    max-width: 44px !important;
+    height: 50px !important;
+    margin: 0 3px 27px !important;
     padding: 0 !important;
 
     box-sizing: border-box !important;
-    border: 1px solid #d5d5d5 !important;
-    border-radius: 8px !important;
-    background: #ffffff !important;
-    color: #222222 !important;
+    border: 1px solid #e1e1e8 !important;
+    border-radius: 10px !important;
+    background: #fafafd !important;
+    color: #252530 !important;
 
     font-family: inherit;
     font-size: 20px !important;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center !important;
-    line-height: normal;
 
-    box-shadow: none !important;
     outline: none;
+    box-shadow: none !important;
     appearance: none;
     -webkit-appearance: none;
 
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
-/* Focused box */
 form:has(#otpemail) input[type="text"]:focus {
-    border-color: #e63946 !important;
-    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.12) !important;
+    border-color: #e51b50 !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(229, 27, 80, 0.09) !important;
 }
 
 /* Verify button */
 form:has(#otpemail) .verify-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 13px 18px;
+    min-height: 51px;
     margin: 0;
+    padding: 12px 18px;
 
-    border: 1px solid #e63946 !important;
-    border-radius: 7px !important;
-    background: #e63946 !important;
+    border: 1px solid #d90c50 !important;
+    border-radius: 11px !important;
+    background: linear-gradient(110deg, #c90046, #e51b50) !important;
     color: #ffffff !important;
 
     font-family: inherit;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 750;
     cursor: pointer;
-    box-shadow: none;
-    transition: background 0.2s;
+
+    box-shadow: 0 5px 14px rgba(204, 0, 73, 0.16);
+    transition: background 0.25s ease, transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 form:has(#otpemail) .verify-btn:hover {
-    background: #c92e3a !important;
-    border-color: #c92e3a !important;
+    border-color: #c90046 !important;
+    background: linear-gradient(110deg, #b90042, #d90c50) !important;
+    box-shadow: 0 7px 18px rgba(204, 0, 73, 0.22);
+    transform: translateY(-1px);
+}
+
+form:has(#otpemail) .verify-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+form:has(#otpemail) .verify-btn:focus-visible {
+    outline: 3px solid rgba(229, 27, 80, 0.2);
+    outline-offset: 3px;
 }
 
 /* Mobile */
 @media (max-width: 480px) {
     form:has(#otpemail) {
         width: calc(100% - 32px);
-        margin: 35px auto;
-        padding: 30px 12px;
+        margin: 40px auto;
+        padding: 30px 16px;
+        border-radius: 18px;
     }
 
     form:has(#otpemail) input[type="text"] {
@@ -114,7 +161,13 @@ form:has(#otpemail) .verify-btn:hover {
     }
 }
 
+/* Extra-small screens */
 @media (max-width: 350px) {
+    form:has(#otpemail) {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
     form:has(#otpemail) input[type="text"] {
         width: 35px !important;
         min-width: 35px !important;
