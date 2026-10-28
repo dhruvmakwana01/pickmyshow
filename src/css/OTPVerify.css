@@ -1,0 +1,126 @@
+
+/* OTP Verification Page */
+
+body {
+    background: #f5f5f7;
+}
+
+form:has(#otpemail) {
+    width: 100%;
+    max-width: 420px;
+    margin: 60px auto;
+    padding: 36px 30px;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Email information */
+form:has(#otpemail) p {
+    margin: 0 0 28px;
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+#otpemail {
+    display: block;
+    margin-top: 5px;
+    color: #222222;
+    font-size: 15px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* Six OTP boxes */
+form:has(#otpemail) input[type="text"] {
+    display: inline-block !important;
+    width: 46px !important;
+    min-width: 46px !important;
+    max-width: 46px !important;
+    height: 52px !important;
+    margin: 0 4px 28px !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+    border: 1px solid #d5d5d5 !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    color: #222222 !important;
+
+    font-family: inherit;
+    font-size: 20px !important;
+    font-weight: 600;
+    text-align: center !important;
+    line-height: normal;
+
+    box-shadow: none !important;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Focused box */
+form:has(#otpemail) input[type="text"]:focus {
+    border-color: #e63946 !important;
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.12) !important;
+}
+
+/* Verify button */
+form:has(#otpemail) .verify-btn {
+    display: block;
+    width: 100%;
+    padding: 13px 18px;
+    margin: 0;
+
+    border: 1px solid #e63946 !important;
+    border-radius: 7px !important;
+    background: #e63946 !important;
+    color: #ffffff !important;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background 0.2s;
+}
+
+form:has(#otpemail) .verify-btn:hover {
+    background: #c92e3a !important;
+    border-color: #c92e3a !important;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    form:has(#otpemail) {
+        width: calc(100% - 32px);
+        margin: 35px auto;
+        padding: 30px 12px;
+    }
+
+    form:has(#otpemail) input[type="text"] {
+        width: 40px !important;
+        min-width: 40px !important;
+        max-width: 40px !important;
+        height: 46px !important;
+        margin: 0 3px 24px !important;
+        font-size: 18px !important;
+    }
+}
+
+@media (max-width: 350px) {
+    form:has(#otpemail) input[type="text"] {
+        width: 35px !important;
+        min-width: 35px !important;
+        max-width: 35px !important;
+        height: 42px !important;
+        margin-right: 2px !important;
+        margin-left: 2px !important;
+    }
+}
