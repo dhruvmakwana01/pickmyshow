@@ -2,8 +2,12 @@
 import { useState } from 'react';
 import '../css/Navbar.css';
 import { Link, useNavigate } from 'react-router';
+import { UserContext } from './UserProvider';
+import { useContext } from 'react';
+
 
 function Navbar() {
+    const { user } = useContext(UserContext);
     const [searchText, setSearchText] = useState('');
     const [selectedCity, setSelectedCity] = useState('Mumbai');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,6 +15,7 @@ function Navbar() {
     const [citySearch, setCitySearch] = useState('');
 
     const navigate = useNavigate();
+    // const userDetails = null; 
 
     const cities = [
         'Mumbai',
@@ -264,6 +269,8 @@ function Navbar() {
                 {/* Second Row: Main Navigation */}
                 <div className="pickmyshow-nav-row">
                     <ul className="navbar-nav pickmyshow-nav-links">
+                        <li><h3>{user.name}</h3></li>
+                        {/* <li>{userDetails.name}</li>  */}
                         <li className="nav-item">
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
@@ -278,6 +285,9 @@ function Navbar() {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/Theatres">Theatres</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/Demo2">Demo2</Link>
                         </li>
                     </ul>
                 </div>

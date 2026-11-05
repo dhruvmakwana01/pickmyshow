@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router";
 import "../css/Signup.css";
 
 function Signup() {
+    const [name, setName] = useState("");
+    const [contactNumber, setContactNumber] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmpassword, setConfirmpassword] = useState("");
@@ -37,7 +39,12 @@ function Signup() {
             const response = await fetch("http://localhost:3005/Register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password })
+                body: JSON.stringify({
+                    name: name,
+                    contactNumber: contactNumber,
+                    email: email,
+                    password: password
+                })
             });
 
             const data = await response.json();
@@ -106,6 +113,38 @@ function Signup() {
                     </div>
 
                     <form className="auth-form signup-form" onSubmit={registerUser}>
+
+                        <div className="auth-field">
+                            <label htmlFor="signupName">Full name</label>
+                            <input
+                                type="text"
+                                id="signupName"
+                                name="name"
+                                autoComplete="name"
+                                required
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                placeholder="Enter your full name"
+                            />
+                        </div>
+
+                        <div className="auth-field">
+                            <label htmlFor="contactNumber">Contact number</label>
+                            <input
+                                type="tel"
+                                id="contactNumber"
+                                name="contactNumber"
+                                autoComplete="tel"
+                                required
+                                value={contactNumber}
+                                onChange={(e) => setContactNumber(e.target.value)}
+                                placeholder="Enter your contact number"
+                                pattern="[0-9]{10}"
+                                maxLength={10}
+                                title="Please enter a valid 10-digit mobile number"
+                            />
+                        </div>
+
                         <div className="auth-field">
                             <label htmlFor="signupEmail">Email address</label>
                             <input

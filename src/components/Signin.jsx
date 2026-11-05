@@ -1,13 +1,14 @@
-
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router";
 import "../css/Signin.css";
+import { UserContext } from "./UserProvider";
 
 function Signin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
+    const { user, setUser } = useContext(UserContext);
 
     const signinuser = async (e) => {
         e.preventDefault();
@@ -28,6 +29,12 @@ function Signin() {
             if (response.ok && data.msg === "Login Successful") {
                 sessionStorage.setItem("email", email);
                 alert("Login Successful");
+                setUser({
+                    ...user,
+                    name: data.name,
+                    email: data.email,
+                    contact: data.contact
+                });
                 navigate("/");
             } else if (data.msg === "Email is not verified") {
                 alert("Your email is not verified. Please complete signup verification.");

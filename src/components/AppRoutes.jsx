@@ -9,6 +9,7 @@ import Theatres from './Theatres.jsx';
 import Signin from './Signin.jsx';
 import Signup from './Signup.jsx';
 import OTPVerify from './OTPVerify.jsx';
+import Demo2 from './Demo2.jsx';
 
 function AppRoutes() {
     return (
@@ -21,6 +22,7 @@ function AppRoutes() {
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/otpverify" element={<OTPVerify />} />
+            <Route path="/Demo2" element={<Demo2 />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

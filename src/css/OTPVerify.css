@@ -66,6 +66,14 @@ form:has(#otpemail) p {
     overflow-wrap: anywhere;
 }
 
+/* OTP Timer */
+form:has(#otpemail) .otp-timer {
+    margin: 0 0 18px;
+    color: #777783;
+    font-size: 12px;
+    font-weight: 600;
+}
+
 /* Six OTP input boxes */
 form:has(#otpemail) input[type="text"] {
     display: inline-block !important;
@@ -95,10 +103,19 @@ form:has(#otpemail) input[type="text"] {
     transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
+/* OTP input focus */
 form:has(#otpemail) input[type="text"]:focus {
     border-color: #e51b50 !important;
     background: #ffffff !important;
     box-shadow: 0 0 0 4px rgba(229, 27, 80, 0.09) !important;
+}
+
+/* OTP input disabled after expiry */
+form:has(#otpemail) input[type="text"]:disabled {
+    background: #eeeeF2 !important;
+    color: #a5a5ae !important;
+    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 /* Verify button */
@@ -123,23 +140,64 @@ form:has(#otpemail) .verify-btn {
 
     box-shadow: 0 5px 14px rgba(204, 0, 73, 0.16);
     transition: background 0.25s ease, transform 0.25s ease,
-        box-shadow 0.25s ease;
+        box-shadow 0.25s ease, opacity 0.25s ease;
 }
 
-form:has(#otpemail) .verify-btn:hover {
+form:has(#otpemail) .verify-btn:hover:not(:disabled) {
     border-color: #c90046 !important;
     background: linear-gradient(110deg, #b90042, #d90c50) !important;
     box-shadow: 0 7px 18px rgba(204, 0, 73, 0.22);
     transform: translateY(-1px);
 }
 
-form:has(#otpemail) .verify-btn:active {
+form:has(#otpemail) .verify-btn:active:not(:disabled) {
     transform: translateY(0) scale(0.98);
 }
 
 form:has(#otpemail) .verify-btn:focus-visible {
     outline: 3px solid rgba(229, 27, 80, 0.2);
     outline-offset: 3px;
+}
+
+/* Verify button disabled */
+form:has(#otpemail) .verify-btn:disabled {
+    background: #c9c9d0 !important;
+    border-color: #c9c9d0 !important;
+    color: #ffffff !important;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.8;
+    transform: none;
+}
+
+/* Resend OTP button */
+form:has(#otpemail) .resend-btn {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+
+    border: none;
+    background: transparent;
+    color: #e51b50;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+form:has(#otpemail) .resend-btn:hover:not(:disabled) {
+    color: #b90042;
+    text-decoration: underline;
+}
+
+form:has(#otpemail) .resend-btn:disabled {
+    color: #a5a5ae;
+    cursor: not-allowed;
+    opacity: 0.75;
 }
 
 /* Mobile */
